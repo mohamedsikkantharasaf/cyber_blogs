@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LinkedIn Post – Mohamed Sikkanthar Asaf</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0a0a0f;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 40px 20px;
+    font-family: 'Syne', sans-serif;
+  }
+  .card {
+    width: 680px;
+    background: #0f0f1a;
+    border: 1px solid #1e1e3a;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    animation: fadeUp 0.7s ease both;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: -80px; left: 50%;
+    transform: translateX(-50%);
+    width: 400px; height: 300px;
+    background: radial-gradient(ellipse, rgba(255,60,80,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a0a10 0%, #0f0f1a 100%);
+    border-bottom: 1px solid #2a1a20;
+    padding: 28px 32px 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .avatar {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff3c50, #ff8c42);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px;
+    font-weight: 800;
+    color: white;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 3px rgba(255,60,80,0.2);
+    letter-spacing: -0.5px;
+  }
+  .author-info { flex: 1; }
+  .author-name {
+    font-size: 15px; font-weight: 700;
+    color: #f0f0f8;
+    letter-spacing: -0.01em;
+  }
+  .author-title {
+    font-size: 12px; color: #666688;
+    margin-top: 2px;
+  }
+  .li-badge {
+    background: #0a66c2;
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+  }
+  .content { padding: 32px; }
+  .hook {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 26px;
+    color: #ff3c50;
+    line-height: 1.25;
+    margin-bottom: 20px;
+    animation: fadeUp 0.7s 0.1s ease both;
+  }
+  .context-banner {
+    background: linear-gradient(135deg, #0d1a2a, #0f0f1a);
+    border: 1px solid #1a3a5a;
+    border-left: 3px solid #0a84ff;
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 24px;
+    font-size: 13px;
+    color: #7ab0d8;
+    line-height: 1.6;
+    animation: fadeUp 0.7s 0.15s ease both;
+  }
+  .context-banner strong { color: #a0c8f0; }
+  .body-text {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #b0b0cc;
+    margin-bottom: 28px;
+    animation: fadeUp 0.7s 0.2s ease both;
+  }
+  .body-text strong { color: #e0e0f0; font-weight: 700; }
+  .techniques {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 28px;
+    animation: fadeUp 0.7s 0.3s ease both;
+  }
+  .tech-item {
+    background: #13131f;
+    border: 1px solid #1e1e3a;
+    border-radius: 10px;
+    padding: 14px 16px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s, transform 0.2s;
+    cursor: default;
+  }
+  .tech-item:hover {
+    border-color: rgba(255,60,80,0.4);
+    transform: translateY(-2px);
+  }
+  .tech-item::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, #ff3c50, #ff8c42);
+    border-radius: 3px 0 0 3px;
+  }
+  .tech-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #ff6070;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .tech-desc {
+    font-size: 13px;
+    color: #8888aa;
+    line-height: 1.5;
+  }
+  .cta {
+    background: linear-gradient(135deg, #1a0a10, #0d0d1a);
+    border: 1px solid #2a1a20;
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-bottom: 28px;
+    animation: fadeUp 0.7s 0.4s ease both;
+  }
+  .cta p { font-size: 15px; color: #c0c0d8; line-height: 1.65; }
+  .cta strong { color: #ff3c50; }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    animation: fadeUp 0.7s 0.5s ease both;
+  }
+  .tag {
+    font-size: 13px;
+    color: #0a84ff;
+    background: rgba(10,132,255,0.08);
+    border: 1px solid rgba(10,132,255,0.15);
+    border-radius: 6px;
+    padding: 4px 10px;
+    transition: background 0.2s;
+  }
+  .tag:hover { background: rgba(10,132,255,0.15); }
+  .footer {
+    border-top: 1px solid #1e1e3a;
+    padding: 16px 32px;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    animation: fadeUp 0.7s 0.6s ease both;
+  }
+  .reaction {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 13px; color: #666688;
+    cursor: pointer;
+    transition: color 0.2s;
+    padding: 6px 10px;
+    border-radius: 6px;
+  }
+  .reaction:hover { color: #b0b0cc; background: rgba(255,255,255,0.04); }
+  .reaction span { font-size: 16px; }
+  .copy-btn {
+    margin-left: auto;
+    background: linear-gradient(135deg, #ff3c50, #ff6030);
+    border: none;
+    color: white;
+    font-family: 'Syne', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 8px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+  .copy-btn:hover { opacity: 0.88; transform: scale(0.98); }
+  .copy-btn:active { transform: scale(0.95); }
+  .copied-msg {
+    display: none;
+    color: #44cc88;
+    font-size: 12px;
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="header">
+    <div class="avatar">MS</div>
+    <div class="author-info">
+      <div class="author-name">Mohamed Sikkanthar Asaf</div>
+      <div class="author-title"> Cybersecurity Professional </div>
+    </div>
+    <div class="li-badge">in</div>
+  </div>
+
+  <div class="content">
+    <div class="hook">Phishing isn't what it used to be.<br>It's now surgical, invisible, and ruthless.</div>
+
+    <div class="context-banner">
+      🔍 While conducting <strong>threat analysis on Scattered Spider (UNC3944 / Octo Tempest)</strong>, I discovered their phishing infrastructure had evolved far beyond what most detection tools expect. Here's what I found about how modern phishing actually works.
+    </div>
+
+    <div class="body-text">
+      We've moved far beyond "click here to claim your prize." Modern phishing is a <strong>precision operation</strong> — attackers study their targets, fingerprint their visitors, and serve malicious content only to the exact people they want to compromise.<br><br>
+      Scattered Spider's adoption of AitM toolkits like <strong>Evilginx</strong> was a turning point. Here's what that evolution looks like 👇
+    </div>
+
+    <div class="techniques">
+      <div class="tech-item">
+        <div class="tech-label">Conditional Loading</div>
+        <div class="tech-desc">Phishing pages only activate for the right target. Everyone else sees a blank page or a legitimate site.</div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-label">Precision Targeting</div>
+        <div class="tech-desc">Email is validated against an attacker's database before the login form even appears. No match? No phish.</div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-label">Visitor Fingerprinting</div>
+        <div class="tech-desc">Screen resolution, timezone, browser plugins — all checked to confirm you're a real victim, not a researcher.</div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-label">IP Blocking</div>
+        <div class="tech-desc">Security vendors, VirusTotal, urlscan, cloud providers — all blocked before they can even see the page.</div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-label">One-Shot URLs (Evilginx)</div>
+        <div class="tech-desc">"One IP, one chance." Revisit the URL and you get a fake 404 — or your IP is permanently banned.</div>
+      </div>
+      <div class="tech-item">
+        <div class="tech-label">AitM Frameworks</div>
+        <div class="tech-desc">Evilginx sits between victim and real login — capturing MFA tokens live, bypassing 2FA entirely. Core to Scattered Spider's 2024–25 campaigns.</div>
+      </div>
+    </div>
+
+    <div class="cta">
+      <p>
+        The old playbook of "check the URL and don't click suspicious links" <strong>is not enough anymore.</strong><br><br>
+        Defenders need to think like attackers: assume detection evasion is built in from day one. Zero Trust, phishing-resistant MFA (passkeys, hardware keys), and behavioral anomaly detection aren't optional upgrades — <strong>they're table stakes.</strong>
+      </p>
+    </div>
+
+    <div class="tags">
+      <span class="tag">#ScatteredSpider</span>
+      <span class="tag">#ThreatIntelligence</span>
+      <span class="tag">#Phishing</span>
+      <span class="tag">#AitM</span>
+      <span class="tag">#Evilginx</span>
+      <span class="tag">#Cybersecurity</span>
+      <span class="tag">#ThreatHunting</span>
+      <span class="tag">#ZeroTrust</span>
+      <span class="tag">#InfoSec</span>
+      <span class="tag">#SOC</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="reaction"><span>👍</span> Like</div>
+    <div class="reaction"><span>💬</span> Comment</div>
+    <div class="reaction"><span>🔁</span> Repost</div>
+    <button class="copy-btn" onclick="copyPost()">Copy Post Text</button>
+    <span class="copied-msg" id="copied">✓ Copied!</span>
+  </div>
+</div>
+
+<script>
+const postText = `🔍 While conducting threat analysis on Scattered Spider (UNC3944 / Octo Tempest), I discovered their phishing infrastructure had evolved far beyond what most detection tools expect.
+
+Phishing isn't what it used to be. It's now surgical, invisible, and ruthless.
+
+We've moved far beyond "click here to claim your prize." Modern phishing is a precision operation — attackers study their targets, fingerprint their visitors, and serve malicious content only to the exact people they want to compromise.
+
+Scattered Spider's adoption of AitM toolkits like Evilginx was a turning point. Here's what that evolution looks like 👇
+
+🎯 Conditional Loading — Phishing pages only activate for the right target. Everyone else sees a blank page or a legitimate site.
+
+🔍 Precision Targeting — The victim's email is validated against an attacker's database before the login form even appears. No match? No phish.
+
+🖥️ Visitor Fingerprinting — Screen resolution, timezone, browser plugins — all checked to confirm you're a real victim, not a researcher (e.g. Tycoon 2FA kit).
+
+🚫 Security IP Blocking — VirusTotal, urlscan, cloud provider IPs — all blocked before they can even see the page.
+
+💀 One-Shot URLs (Evilginx) — "One IP, one chance." Revisit the same link and you get a fake 404 — or your IP is permanently banned. Scattered Spider used this actively.
+
+⚡ AitM Frameworks — Tools like Evilginx sit between the victim and a real login page, capturing MFA tokens in real time and bypassing 2FA entirely.
+
+The old playbook of "check the URL and don't click suspicious links" is not enough anymore.
+
+Defenders need to think like attackers: assume detection evasion is built in from day one. Zero Trust, phishing-resistant MFA (passkeys, hardware keys), and behavioral anomaly detection aren't optional upgrades — they're table stakes.
+
+— Mohamed Sikkanthar Asaf | Threat Intelligence Analyst
+
+#ScatteredSpider #ThreatIntelligence #Phishing #AitM #Evilginx #Cybersecurity #ThreatHunting #ZeroTrust #InfoSec #SOC`;
+
+function copyPost() {
+  navigator.clipboard.writeText(postText).then(() => {
+    const btn = document.querySelector('.copy-btn');
+    const msg = document.getElementById('copied');
+    btn.style.display = 'none';
+    msg.style.display = 'block';
+    setTimeout(() => { btn.style.display = 'block'; msg.style.display = 'none'; }, 2500);
+  });
+}
+</script>
+</body>
+</html>
