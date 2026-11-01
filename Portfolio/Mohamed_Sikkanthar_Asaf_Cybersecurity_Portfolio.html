@@ -957,16 +957,17 @@ DeviceNetworkEvents
 <li>Monitored and triaged security alerts across a broad enterprise environment, including Windows endpoints and servers, Microsoft Defender XDR, Azure, Zscaler proxy, Palo Alto firewalls, Mimecast email security, and IDS/IPS network logs.</li>
 <li>Conducted investigations and root-cause analysis of alerts involving social engineering, internal reconnaissance, exfiltration, lateral movement, LoLBins abuse, insider misuse of remote-access tools, account compromise, and malware delivered through malvertising chains. Identified, contained, and remediated confirmed threats, and escalated cases as needed.</li>
 <li>Performed endpoint analysis of process execution, registry changes, file activity, and behavioural patterns using EDR and UEM. Investigated identity-based threats in Microsoft Entra ID, including unauthorized access attempts such as brute-force attacks and password spraying, anomalous sign-ins, impossible travel, and unauthorized MFA activity</li>
-<li>Analysed and blocked phishing campaigns using Mimecast and Microsoft Defender for Email Security.<li>
+<li>Analysed and blocked phishing campaigns using Mimecast and Microsoft Defender for Email Security.</li>
 <li>Validated and published IOC feeds in MISP for automated distribution across integrated security tools, and enriched indicators using Google Threat Intelligence and open-source threat intelligence to establish threat context and prioritize escalations.</li>
 <li>Identified and filtered false positives, ensuring only validated threats were escalated with complete context and supporting evidence.</li>
 <li>Executed containment and responsive actions, including isolating affected hosts, quarantining malicious files while preserving evidence, locking accounts, and resetting credentials. Supported incident remediation in accordance with established SOC playbooks and response procedures.</li>
 <li>Maintained accurate incident documentation in ServiceNow, consistently met SLA targets, and contributed to shift handovers and continuous refinement of SOC playbooks.</li>
-<li>Developed and implemented detection rules in Splunk SPL and Microsoft KQL based on threat intelligence, risk assessments, emerging threats, and SOC requirements.</li>
-<li>Validated detection rules through realistic attack simulations using Splunk Attack Range and custom Python and PowerShell scripts to ensure detection accuracy before deployment.</li>
-<li>Mapped detection use cases to MITRE ATT&amp;CK TTPs, identified relevant log sources and data types, and integrated detections with threat intelligence feeds to strengthen detection coverage.</li>
-<li>Designed and documented structured custom detection playbooks to standardize SOC analyst workflows and improve triage consistency.</li>
-<li>Continuously tuned detection logic and alert thresholds to reduce false positives, improve alert fidelity, and focus analyst attention on genuine threats.</li>
+<li>Developed and tuned high-fidelity, behavior-based detection rules for environment-specific threats using Splunk Search Processing Language (SPL) and Kusto Query Language (KQL). Based rules on threat intelligence, risk assessments, emerging threats and vulnerabilities, purple-team exercises and ad hoc SOC requirements.</li>
+<li>Validated each rule before deployment through realistic attack simulations using Splunk Attack Range, Atomic Red Team, and custom scripts combining analyst logic with AI assistance.</li>
+<li>Mapped detection use-cases to MITRE ATT&CK TTPs, identified relevant log sources and data types, and integrating them into Splunk Security Essentials alongside threat intelligence feeds to strengthen overall detection coverage.</li>
+<li>Designed and documented structured custom detection playbooks to standardize SOC analyst workflows during incident investigations and improving triage consistency.</li>
+<li>Continuously tuned detection logic and alert thresholds to suppress false positives, sharpen alert fidelity, and ensure analysts focused on genuine threats.</li>
+<li>Collaborated with IT and security teams to gather context for detection development and tuning, including identifying legitimate cloud applications that use WMI regularly, validating IP subnets for allow listing, investigating a misconfigured domain controller, and reviewing Teams and SharePoint conditional access policies in response to Scattered Spider threat intelligence.</li>
 </ul>
 </div>
 </div>
