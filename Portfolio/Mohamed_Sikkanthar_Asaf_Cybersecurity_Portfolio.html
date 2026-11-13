@@ -1470,16 +1470,16 @@ DeviceProcessEvents
 <div class="det-body">
 <h4>MISP IOC — Malicious Destination IP</h4>
 <p>Detects allowed outbound connections to MISP-listed malicious IPs, enriched with GTI. Fires only when GTI verdict is SUSPICIOUS or MALICIOUS with HIGH/MEDIUM severity.</p>
-<div class="code-block full-query" data-source="source-detection-document">index IN (demo_checkpoint, demo_pan_logs, demo_zscaler) NOT rule IN (*Guest*) NOT rule_name IN (*guest*) NOT action IN ("blocked","block","dropped","Drop","Prevent") (NOT dest_ip IN (10.0.0.0/8 
-172.16.0.0/12
-198.51.100.0/27 
-198.51.100.32/27 
-198.51.100.64/27 
-203.0.113.0/16
-203.0.114.0/16
-192.0.2.0/16
-192.168.0.0/16 )) 
-| where NOT (cidrmatch("10.250.0.0/16", src_ip))
+<div class="code-block full-query" data-source="source-detection-document">index IN (demo_checkpoint, demo_pan_logs, demo_zscaler) NOT rule IN (*Guest*) NOT rule_name IN (*guest*) NOT action IN ("blocked","block","dropped","Drop","Prevent") (NOT dest_ip IN (x.x.x.x/8 
+x.x.x.x/12
+x.x.x.x/27 
+x.x.x.x/27 
+x.x.x.x/27 
+x.x.x.x/16
+x.x.x.x/16
+x.x.x.x/16
+x.x.x.x/16 )) 
+| where NOT (cidrmatch("x.x.x.x/16", src_ip))
 | fields _time, index, sourcetype, description, protocol, dest_ip, src_ip, action, originsicname, dest_port, src_port, rule, rule_name, dest_nt_host, timestamp, uri_path,url, site, src_zone, dest_zone, app , url, hostname, devicehostname, user
 | search NOT [| inputlookup SOCWhitelist.csv | fields dest_ip] 
 
